@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapptest.tests.FirstFragment;
+import com.example.myapptest.tests.SecoundFragment;
+import com.example.myapptest.tests.ThirdFragment;
+
 public class MainActivity extends AppCompatActivity {
     private Button buttonReplace;
 

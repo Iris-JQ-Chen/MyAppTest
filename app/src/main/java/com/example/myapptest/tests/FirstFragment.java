@@ -1,4 +1,4 @@
-package com.example.myapptest;
+package com.example.myapptest.tests;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.myapptest.R;
 
 /**
  * Created by 蒲公英之流 on 2019-02-12.

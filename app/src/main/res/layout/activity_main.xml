@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/first_frag_id"
         android:tag="first_frag_tag"
-        android:name="com.example.myapptest.FirstFragment"
+        android:name="com.example.myapptest.tests.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
@@ -23,7 +23,7 @@
 
     <!--<fragment-->
         <!--android:tag="secound_frag_tag"-->
-        <!--android:name="com.example.myapptest.SecoundFragment"-->
+        <!--android:name="com.example.myapptest.tests.SecoundFragment"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="0dp"-->
         <!--android:layout_weight="1"/>-->
