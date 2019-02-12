@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyAppTest</string>
+    <string name="descr_overflow_button">PopupMenu</string>
+    <string name="new_game">NewGame</string>
+    <string name="help">Help</string>
 </resources>
