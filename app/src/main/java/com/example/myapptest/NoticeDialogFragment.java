@@ -51,9 +51,14 @@ public class NoticeDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Build the dialog and set up the button click handlers
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        Bundle bundle = getArguments();
+        String message = "Message";
+        if(bundle != null){
+            message = bundle.getString("string")+bundle.getInt("int");
+        }
         LayoutInflater inflater = getActivity().getLayoutInflater();
         final View view = inflater.inflate(R.layout.dialog_signin,null);
-        builder.setMessage(R.string.dialog_fire_missiles)
+        builder.setMessage(message)
                 .setView(view)
                 .setPositiveButton(R.string.fire, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

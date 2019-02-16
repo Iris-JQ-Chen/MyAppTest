@@ -26,6 +26,10 @@ public class Main2Activity extends FragmentActivity implements NoticeDialogFragm
     public void showNoticeDialog() {
         // Create an instance of the dialog fragment and show it
         DialogFragment dialog = new NoticeDialogFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("int",1);
+        bundle.putString("string","string");
+        dialog.setArguments(bundle);
         dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
     }
 
