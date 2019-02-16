@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Main2Activity extends FragmentActivity implements NoticeDialogFragment.NoticeDialogListener{
     //...
@@ -32,14 +33,16 @@ public class Main2Activity extends FragmentActivity implements NoticeDialogFragm
     // Fragment.onAttach() callback, which it uses to call the following methods
     // defined by the NoticeDialogFragment.NoticeDialogListener interface
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
+    public void onDialogPositiveClick(NoticeDialogFragment dialog) {
         // User touched the dialog's positive button
         //...
+        Toast.makeText(Main2Activity.this,dialog.userName,Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
+    public void onDialogNegativeClick(NoticeDialogFragment dialog) {
         // User touched the dialog's negative button
         //...
+        Toast.makeText(Main2Activity.this,dialog.userPassword,Toast.LENGTH_SHORT).show();
     }
 }

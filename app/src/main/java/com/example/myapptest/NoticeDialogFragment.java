@@ -6,6 +6,10 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by 蒲公英之流 on 2019-02-16.
@@ -13,12 +17,15 @@ import android.support.v7.app.AlertDialog;
 
 public class NoticeDialogFragment extends DialogFragment {
 
+    public String userName;
+    public String userPassword;
+
     /* The activity that creates an instance of this dialog fragment must
      * implement this interface in order to receive event callbacks.
      * Each method passes the DialogFragment in case the host needs to query it. */
     public interface NoticeDialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog);
-        public void onDialogNegativeClick(DialogFragment dialog);
+        public void onDialogPositiveClick(NoticeDialogFragment dialog);
+        public void onDialogNegativeClick(NoticeDialogFragment dialog);
     }
 
     // Use this instance of the interface to deliver action events
@@ -44,15 +51,25 @@ public class NoticeDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Build the dialog and set up the button click handlers
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        final View view = inflater.inflate(R.layout.dialog_signin,null);
         builder.setMessage(R.string.dialog_fire_missiles)
+                .setView(view)
                 .setPositiveButton(R.string.fire, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        View view1 = view.findViewById(R.id.username);
+                        TextView textView = (TextView)view1;
+                        userName = textView.getText().toString();
+                        // Toast.makeText(getActivity(),textView.getText().toString(),Toast.LENGTH_SHORT).show();
                         // Send the positive button event back to the host activity
                         mListener.onDialogPositiveClick(NoticeDialogFragment.this);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        View view1 = view.findViewById(R.id.password);
+                        TextView textView = (TextView)view1;
+                        userPassword = textView.getText().toString();
                         // Send the negative button event back to the host activity
                         mListener.onDialogNegativeClick(NoticeDialogFragment.this);
                     }
