@@ -20,12 +20,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FireMissilesDialogFragment dialogFragment = new FireMissilesDialogFragment();
                 FragmentManager manager = getSupportFragmentManager();
                 dialogFragment.show(manager,"dealogFrag1");
+            }
+        });
+
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
