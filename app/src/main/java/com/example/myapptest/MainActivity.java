@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MyAppTest";
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,minute+"");
         Log.d(TAG,second+"");
         Log.d(TAG,integer.toString());
+
+        Date date = new Date();
+        String dateStr = date.toLocaleString();
+        Log.d(TAG,dateStr);
 
 //        Toast.makeText(this,integer+"",Toast.LENGTH_SHORT).show();
     }
