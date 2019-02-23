@@ -12,17 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="take video"/>
-        <Button
-            android:id="@+id/take_video_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="take video and save"/>
         <VideoView
             android:id="@+id/activity1_video1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <VideoView
-            android:id="@+id/activity1_video2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
