@@ -161,20 +161,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 创建音频目录
-     */
-    private void createVoiceFile() {
-        mVoiceName = getMyTime() + ".amr";
-        Log.d(TAG, "录音文件名称：" + mVoiceName);
-        mVoiceFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath()
-                + "/" + SD_APP_DIR_NAME + "/" + VOICE_DIR_NAME + "/", mVoiceName);
-        mVoicePath = mVoiceFile.getAbsolutePath();
-        mVoiceFile.getParentFile().mkdirs();
-        Log.d(TAG, "按设置的目录层级创建音频文件，路径：" + mVoicePath);
-        mVoiceFile.setWritable(true);
-    }
-
-    /**
      * 处理返回结果。
      * 1、图片
      * 2、音频
@@ -209,6 +195,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    /**
+     * 创建音频目录
+     */
+    private void createVoiceFile() {
+        mVoiceName = getMyTime() + ".amr";
+        Log.d(TAG, "录音文件名称：" + mVoiceName);
+//        mVoiceFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + SD_APP_DIR_NAME + "/" + VOICE_DIR_NAME + "/", mVoiceName);
+        mVoiceFile = new File(getExternalCacheDir(),mVoiceName);
+        mVoicePath = mVoiceFile.getAbsolutePath();
+        mVoiceFile.getParentFile().mkdirs();
+        Log.d(TAG, "按设置的目录层级创建音频文件，路径：" + mVoicePath);
+        mVoiceFile.setWritable(true);
     }
 
     /**
