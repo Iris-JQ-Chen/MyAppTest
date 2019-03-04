@@ -9,11 +9,19 @@ import android.view.ViewGroup;
 
 import com.example.myapptest.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by 蒲公英之流 on 2019-03-04.
  */
 
 public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapter.ViewHolder> {
+
+    private List<String> stringList;
+
+    public MainRecyclerAdapter(List<String> stringList){ this.stringList = stringList; }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_main, parent, false);
@@ -22,9 +30,10 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mButton.setText("Item " + position);
+        String string = stringList.get(position);
+        holder.mButton.setText("Item " + string);
         if(holder.mRecyclerView.getAdapter()==null) {
-            holder.mRecyclerView.setAdapter(new GridAdapter());
+            holder.mRecyclerView.setAdapter(new GridAdapter(getStringList(8)));
         }/*else {
             holder.mRecyclerView.getAdapter().notifyDataSetChanged();
         }*/
@@ -32,7 +41,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return 10;
+        return stringList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,5 +56,17 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerAdapte
             manager.setAutoMeasureEnabled(true);
             mRecyclerView.setLayoutManager(manager);
         }
+    }
+
+    /**
+     * @param num
+     * @return
+     */
+    private List<String> getStringList(int num){
+        List<String> list = new ArrayList<>();
+        for (int i = 0;i<num;i++){
+            list.add("第"+i+"个GridAdapter");
+        }
+        return list;
     }
 }

@@ -8,11 +8,18 @@ import android.view.ViewGroup;
 
 import com.example.myapptest.R;
 
+import java.util.List;
+
 /**
  * Created by 蒲公英之流 on 2019-03-04.
  */
 
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
+
+    private List<String> stringList;
+
+    public GridAdapter (List<String> stringList) { this.stringList = stringList; }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_grid, parent, false);
@@ -21,12 +28,13 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText("Grid "+position);
+        String string = stringList.get(position);
+        holder.mTextView.setText("Grid "+string);
     }
 
     @Override
     public int getItemCount() {
-        return 8;
+        return stringList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
