@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.tool_bar);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
-        ImageView imageView = (ImageView)findViewById(R.id.image);
+//        ImageView imageView = (ImageView)findViewById(R.id.image);
 //        TextView textView = (TextView)findViewById(R.id.text);
 
         setSupportActionBar(toolbar);
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        collapsingToolbarLayout.setTitle("滑动页面的名字");
-        Glide.with(this).load(R.drawable.pic).into(imageView);
+        collapsingToolbarLayout.setTitle("任务名字 ");
+//        Glide.with(this).load(R.drawable.pic).into(imageView);
 //        textView.setText("按实际发牢骚");
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
