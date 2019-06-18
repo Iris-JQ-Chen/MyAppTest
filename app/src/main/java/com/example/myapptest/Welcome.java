@@ -32,8 +32,10 @@ public class Welcome extends Activity implements OnGestureListener {
         detector = new GestureDetector(this);
         flipper = (ViewFlipper) this.findViewById(R.id.ViewFlipper1);
         flipper.addView(addImageView(R.drawable.png1o));
-        flipper.addView(addImageView(R.drawable.png2o));
-        flipper.addView(addImageView(R.drawable.png3o));
+//        flipper.addView(addImageView(R.drawable.png2o));
+//        flipper.addView(addImageView(R.drawable.png3o));
+        flipper.addView(LayoutInflater.from(Welcome.this).inflate(R.layout.test1,null,false));
+        flipper.addView(LayoutInflater.from(Welcome.this).inflate(R.layout.test2,null,false));
 
         flipper.addView(addView());
 
@@ -88,8 +90,7 @@ public class Welcome extends Activity implements OnGestureListener {
     }
 
     @Override
-    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
-                            float distanceY) {
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         // TODO Auto-generated method stub
         return false;
     }
@@ -101,9 +102,7 @@ public class Welcome extends Activity implements OnGestureListener {
     }
 
     @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                           float velocityY) {
-        System.out.println("in------------>>>>>>>");
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         if (e1.getX() - e2.getX() > 120) {
             if (i < 3) {
                 i++;
